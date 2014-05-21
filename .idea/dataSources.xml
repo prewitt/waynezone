@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DataSourceManagerImpl" format="xml" hash="1144357303">
+    <data-source source="LOCAL" name="Rails waynezone: test" uuid="db8eb765-4a25-4f88-9196-32153b5aac5a">
+      <driver-ref>postgresql</driver-ref>
+      <jdbc-driver>org.postgresql.Driver</jdbc-driver>
+      <jdbc-url>jdbc:postgresql:waynezone_test</jdbc-url>
+      <libraries />
+    </data-source>
+    <data-source source="LOCAL" name="Rails waynezone: production" uuid="abc4c957-6047-419e-a749-5e09b859fb8f">
+      <driver-ref>postgresql</driver-ref>
+      <jdbc-driver>org.postgresql.Driver</jdbc-driver>
+      <jdbc-url>jdbc:postgresql:waynezone_production</jdbc-url>
+      <user-name>waynezone</user-name>
+      <user-password>df96df8fdf97df8adfefdfe4dffcdff1df8ddffddfebdff3dfe4dfefdff0dfe5dfe4dfefdff5dfeedfebdffedfebdfe8dfebdff9dfefdff5dffadfebdff9dff9dffddfe5dff8dfeedf8ddff7df8adf8fdf94</user-password>
+      <libraries />
+    </data-source>
+    <data-source source="LOCAL" name="Rails waynezone: development" uuid="44f9520b-dc4d-454b-b3df-4f6a3ceeca67">
+      <driver-ref>postgresql</driver-ref>
+      <jdbc-driver>org.postgresql.Driver</jdbc-driver>
+      <jdbc-url>jdbc:postgresql://127.0.0.1/postgres</jdbc-url>
+      <user-name>wayne</user-name>
+      <user-password>df9bdf98df99df9edf9fdf9c</user-password>
+      <libraries />
+    </data-source>
+  </component>
+</project>
+
