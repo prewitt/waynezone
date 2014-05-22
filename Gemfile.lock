@@ -240,6 +240,7 @@ DEPENDENCIES
   carrierwave
   coderay (~> 1.1.0)
   coffee-rails (~> 3.2.2)
+  daemons (~> 1.1.9)
   dynamic_form (~> 1.1.4)
   factory_girl (~> 4.2.0)
   flickraw-cached
