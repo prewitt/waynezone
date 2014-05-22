@@ -1,14 +1,26 @@
+login: &login
+  adapter: postgresql
+  host: localhost
+  port: 5432
+  username: postgres
+  password: 123456
+
+connection: &connection
+  encoding: unicode
+  pool: 5
+
+
 development:
-  adapter: sqlite3
-  database: db/db_development.sqlite
-  timeout: 5000
+  database: publify_dev
+  <<: *login
+  <<: *connection
 
 test:
-  adapter: sqlite3
-  database: db/db_test.sqlite
-  timeout: 5000
+  database: publify_tests
+  <<: *login
+  <<: *connection
 
 production:
-  adapter: sqlite3
-  database: db/db_production.sqlite
-  timeout: 5000
+  database: publify
+  <<: *login
+  <<: *connection
