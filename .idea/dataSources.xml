@@ -1,26 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="DataSourceManagerImpl" format="xml" hash="1144357303">
-    <data-source source="LOCAL" name="Rails waynezone: test" uuid="db8eb765-4a25-4f88-9196-32153b5aac5a">
+  <component name="DataSourceManagerImpl" format="xml" hash="3576267552">
+    <data-source source="LOCAL" name="Rails waynezone: development" uuid="96901f3c-26c9-40ed-b3e4-00eec1915bfd">
       <driver-ref>postgresql</driver-ref>
       <jdbc-driver>org.postgresql.Driver</jdbc-driver>
-      <jdbc-url>jdbc:postgresql:waynezone_test</jdbc-url>
+      <jdbc-url>jdbc:sqlite:$PROJECT_DIR$/db/db_development.sqlite</jdbc-url>
       <libraries />
     </data-source>
-    <data-source source="LOCAL" name="Rails waynezone: production" uuid="abc4c957-6047-419e-a749-5e09b859fb8f">
+    <data-source source="LOCAL" name="Rails waynezone: test" uuid="2e7c636b-cd07-458b-9e30-9bb64de81bf6">
       <driver-ref>postgresql</driver-ref>
       <jdbc-driver>org.postgresql.Driver</jdbc-driver>
-      <jdbc-url>jdbc:postgresql:waynezone_production</jdbc-url>
-      <user-name>waynezone</user-name>
-      <user-password>df96df8fdf97df8adfefdfe4dffcdff1df8ddffddfebdff3dfe4dfefdff0dfe5dfe4dfefdff5dfeedfebdffedfebdfe8dfebdff9dfefdff5dffadfebdff9dff9dffddfe5dff8dfeedf8ddff7df8adf8fdf94</user-password>
+      <jdbc-url>jdbc:sqlite:$PROJECT_DIR$/db/db_test.sqlite</jdbc-url>
       <libraries />
     </data-source>
-    <data-source source="LOCAL" name="Rails waynezone: development" uuid="44f9520b-dc4d-454b-b3df-4f6a3ceeca67">
+    <data-source source="LOCAL" name="Rails waynezone: production" uuid="202be8b3-98a0-42f1-9758-1e0dd630e3a1">
       <driver-ref>postgresql</driver-ref>
       <jdbc-driver>org.postgresql.Driver</jdbc-driver>
-      <jdbc-url>jdbc:postgresql://127.0.0.1/postgres</jdbc-url>
-      <user-name>wayne</user-name>
+      <jdbc-url>jdbc:postgresql://127.0.0.1:5432/publify</jdbc-url>
+      <user-name>postgres</user-name>
       <user-password>df9bdf98df99df9edf9fdf9c</user-password>
+      <libraries />
+    </data-source>
+    <data-source source="LOCAL" name="SQLite -waynezone:development" uuid="26a9b4b9-5868-4369-b8fa-d55e84fa6143">
+      <driver-ref>sqlite.xerial</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>org.sqlite.JDBC</jdbc-driver>
+      <jdbc-url>jdbc:sqlite:$PROJECT_DIR$/db/db_development.sqlite</jdbc-url>
       <libraries />
     </data-source>
   </component>

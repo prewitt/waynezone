@@ -1,39 +1,83 @@
 source 'https://rubygems.org'
 
+if ENV["HEROKU"]
+  ruby '2.0.0'
 
-# Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '4.1.1'
-# Use postgresql as the database for Active Record
-gem 'pg'
-# Use SCSS for stylesheets
-gem 'sass-rails', '~> 4.0.3'
-# Use Uglifier as compressor for JavaScript assets
-gem 'uglifier', '>= 1.3.0'
-# Use CoffeeScript for .js.coffee assets and views
-gem 'coffee-rails', '~> 4.0.0'
-# See https://github.com/sstephenson/execjs#readme for more supported runtimes
-# gem 'therubyracer',  platforms: :ruby
+  gem "pg"
+  gem "thin" # Change this to another web server if you want (ie. unicorn, passenger, puma...)
+  gem "rails_12factor"
+else
 
-# Use jquery as the JavaScript library
-gem 'jquery-rails'
-# Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
-gem 'turbolinks'
-# Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
-gem 'jbuilder', '~> 2.0'
-# bundle exec rake doc:rails generates the API under doc/api.
-gem 'sdoc', '~> 0.4.0',          group: :doc
+  require 'yaml'
+  env = ENV["RAILS_ENV"] || 'development'
+  dbfile = File.expand_path("../config/database.yml", __FILE__)
 
-# Use ActiveModel has_secure_password
-# gem 'bcrypt', '~> 3.1.7'
+  unless File.exists?(dbfile)
+    if ENV['DB']
+      FileUtils.cp "config/database.yml.#{ENV['DB'] || 'postgres'}", 'config/database.yml'
+    else
+      raise "You need to configure config/database.yml first"
+    end
+  end
 
-# Use unicorn as the app server
-# gem 'unicorn'
+  conf = YAML.load(File.read(dbfile))
+  environment = conf[env]
+  adapter = environment['adapter'] if environment
+  raise "You need define an adapter in your database.yml or set your RAILS_ENV variable" if adapter == '' || adapter.nil?
+  case adapter
+  when 'sqlite3'
+    gem 'sqlite3'
+  when 'postgresql'
+    gem 'pg'
+  when 'mysql2'
+    gem 'mysql2'
+  else
+    raise "Don't know what gem to use for adapter #{adapter}"
+  end
+end
 
-# Use Capistrano for deployment
-# gem 'capistrano-rails', group: :development
+gem 'rails', '~> 3.2.18'
+gem 'htmlentities'
+gem 'bluecloth', '~> 2.1'
+gem 'coderay', '~> 1.1.0'
+gem 'kaminari'
+gem 'RedCloth', '~> 4.2.8'
+gem 'addressable', '~> 2.1', :require => 'addressable/uri'
+gem 'mini_magick', '~> 3.7.0', :require => 'mini_magick'
+gem 'uuidtools', '~> 2.1.1'
+gem 'flickraw-cached'
+gem 'rubypants', '~> 0.2.0'
+gem 'rake', '~> 10.1.0'
+#gem 'acts_as_list'
+#gem 'acts_as_tree_rails3'
+gem 'fog'
+gem 'recaptcha', :require => 'recaptcha/rails', :branch => 'rails3'
+gem 'carrierwave'
+gem 'akismet', '~> 1.0'
+gem 'twitter', '~> 5.6.0'
 
-# Use debugger
-# gem 'debugger', group: [:development, :test]
+gem "jquery-rails", "~> 3.1.0"
+gem "jquery-ui-rails", "~> 4.2.0"
 
-# Windows does not include zoneinfo files, so bundle the tzinfo-data gem
-gem 'tzinfo-data', platforms: [:mingw, :mswin]
+gem 'rails_autolink', '~> 1.1.0'
+gem 'dynamic_form', '~> 1.1.4'
+
+group :assets do
+  gem 'sass-rails', " ~> 3.2.6"
+  gem 'coffee-rails', " ~> 3.2.2"
+  gem 'uglifier'
+end
+
+group :development, :test do
+  gem 'thin'
+  gem 'factory_girl', '~> 4.2.0'
+  gem 'webrat'
+  gem 'rspec-rails', '~> 2.14'
+  gem 'simplecov', :require => false
+  gem 'pry-rails'
+end
+
+# Install gems from each theme
+Dir.glob(File.join(File.dirname(__FILE__), 'themes', '**', "Gemfile")) do |gemfile|
+  eval(IO.read(gemfile), binding)
+end
