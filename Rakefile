@@ -3,5 +3,7 @@
 
 require File.expand_path('../config/application', __FILE__)
 require 'rake'
-
+task :freedom do
+  Bundler.with_clean_env { sh "heroku" }
+end
 Publify::Application.load_tasks
