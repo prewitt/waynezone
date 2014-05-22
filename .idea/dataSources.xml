@@ -4,25 +4,25 @@
     <data-source source="LOCAL" name="Rails waynezone: development" uuid="96901f3c-26c9-40ed-b3e4-00eec1915bfd">
       <driver-ref>postgresql</driver-ref>
       <jdbc-driver>org.postgresql.Driver</jdbc-driver>
-      <jdbc-url>jdbc:postgresql://ec2-54-83-196-217.compute-1.amazonaws.com:5432/dbgbn9mvrhgfv</jdbc-url>
-      <user-name>xyfgqpgworqgnb</user-name>
-      <user-password>dfd9dffcdff5dfcddfcbdfc9dfd0dfd3dfcfdfe9dfd8dfdadfe9dfd2dfd8dfdcdfe8dfd9dfd3df9adfcbdff8df9ddfdcdfeddfc3</user-password>
+      <jdbc-url>jdbc:postgresql://127.0.0.1:5432/publify_dev</jdbc-url>
+      <user-name>postgres</user-name>
+      <user-password>df9bdf98df99df9edf9fdf9c</user-password>
       <libraries />
     </data-source>
     <data-source source="LOCAL" name="Rails waynezone: test" uuid="2e7c636b-cd07-458b-9e30-9bb64de81bf6">
       <driver-ref>postgresql</driver-ref>
       <jdbc-driver>org.postgresql.Driver</jdbc-driver>
-      <jdbc-url>jdbc:postgresql://ec2-54-83-196-217.compute-1.amazonaws.com:5432/publify_tests</jdbc-url>
-      <user-name>xyfgqpgworqgnb</user-name>
-      <user-password>dfd9dffcdff5dfcddfcbdfc9dfd0dfd3dfcfdfe9dfd8dfdadfe9dfd2dfd8dfdcdfe8dfd9dfd3df9adfcbdff8df9ddfdcdfeddfc3</user-password>
+      <jdbc-url>jdbc:postgresql://127.0.0.1:5432/publify_tests</jdbc-url>
+      <user-name>postgres</user-name>
+      <user-password>df9bdf98df99df9edf9fdf9c</user-password>
       <libraries />
     </data-source>
     <data-source source="LOCAL" name="Rails waynezone: production" uuid="202be8b3-98a0-42f1-9758-1e0dd630e3a1">
       <driver-ref>postgresql</driver-ref>
       <jdbc-driver>org.postgresql.Driver</jdbc-driver>
-      <jdbc-url>jdbc:postgresql://ec2-54-83-196-217.compute-1.amazonaws.com:5432/dbgbn9mvrhgfv</jdbc-url>
-      <user-name>xyfgqpgworqgnb</user-name>
-      <user-password>dfd9dffcdff5dfcddfcbdfc9dfd0dfd3dfcfdfe9dfd8dfdadfe9dfd2dfd8dfdcdfe8dfd9dfd3df9adfcbdff8df9ddfdcdfeddfc3</user-password>
+      <jdbc-url>jdbc:postgresql://127.0.0.1:5432/publify</jdbc-url>
+      <user-name>postgres</user-name>
+      <user-password>df9bdf98df99df9edf9fdf9c</user-password>
       <libraries />
     </data-source>
     <data-source source="LOCAL" name="SQLite -waynezone:development" uuid="26a9b4b9-5868-4369-b8fa-d55e84fa6143">

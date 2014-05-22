@@ -1,16 +1,16 @@
-#login: &login
-#  adapter: postgresql
-#  host: localhost
-#  port: 5432
-#  username: postgres
-#  password: 123456
-
 login: &login
   adapter: postgresql
-  host: ec2-54-83-196-217.compute-1.amazonaws.com
+  host: localhost
   port: 5432
-  username: xyfgqpgworqgnb
-  password: sV_gaczyeCrpCxrvBsy0aR7vGi
+  username: postgres
+  password: 123456
+
+#login: &login
+#  adapter: postgresql
+#  host: ec2-54-83-196-217.compute-1.amazonaws.com
+#  port: 5432
+#  username: xyfgqpgworqgnb
+#  password: sV_gaczyeCrpCxrvBsy0aR7vGi
 
 connection: &connection
   encoding: unicode
@@ -18,7 +18,7 @@ connection: &connection
 
 
 development:
-  database: dbgbn9mvrhgfv
+  database: publify_dev
   <<: *login
   <<: *connection
 
@@ -28,6 +28,6 @@ test:
   <<: *connection
 
 production:
-  database: dbgbn9mvrhgfv
+  database: publify
   <<: *login
   <<: *connection
