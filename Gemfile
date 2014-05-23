@@ -35,6 +35,7 @@ else
       raise "Don't know what gem to use for adapter #{adapter}"
   end
 end
+gem 'rails_stdout_logging'
 gem 'rails_serve_static_assets'
 gem 'eventmachine','1.0.0'
 gem 'rails', '~> 3.2.18'
