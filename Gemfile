@@ -41,7 +41,7 @@ gem "thin" # Change this to another web server if you want (ie. unicorn, passeng
 gem "rails_12factor"
 gem 'rails_stdout_logging'
 gem 'rails_serve_static_assets'
-gem 'eventmachine','1.0.0'
+gem 'eventmachine'
 gem 'rails', '~> 3.2.18'
 gem 'htmlentities'
 gem 'bluecloth', '~> 2.1'
