@@ -33,3 +33,4 @@ bin/
 !/themes/bootstrap
 !/themes/typographic
 gems/
+Gemfile.lock
