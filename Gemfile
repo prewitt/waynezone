@@ -3,9 +3,9 @@ source 'https://rubygems.org'
 if ENV["HEROKU"]
   ruby '2.1.2'
 
-  gem "pg"
-  gem "thin" # Change this to another web server if you want (ie. unicorn, passenger, puma...)
- # gem "rails_12factor", group: :production
+  #gem "pg"
+  #gem "thin" # Change this to another web server if you want (ie. unicorn, passenger, puma...)
+  #gem "rails_12factor", group: :production
 else
 
   require 'yaml'
@@ -35,6 +35,10 @@ else
       raise "Don't know what gem to use for adapter #{adapter}"
   end
 end
+
+gem "pg"
+gem "thin" # Change this to another web server if you want (ie. unicorn, passenger, puma...)
+gem "rails_12factor"
 gem 'rails_stdout_logging'
 gem 'rails_serve_static_assets'
 gem 'eventmachine','1.0.0'
@@ -72,9 +76,9 @@ group :assets do
 end
 
 group :development, :test do
-  unless ENV["HEROKU"]
-    gem 'thin'
-  end
+  #unless ENV["HEROKU"]
+  #  gem 'thin'
+  #end
   gem 'factory_girl', '~> 4.2.0'
   gem 'webrat'
   gem 'rspec-rails', '~> 2.14'
