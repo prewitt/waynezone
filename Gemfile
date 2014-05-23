@@ -36,6 +36,7 @@ else
   end
 end
 
+gem "unicorn"
 gem "pg"
 gem "thin" # Change this to another web server if you want (ie. unicorn, passenger, puma...)
 gem "rails_12factor"
