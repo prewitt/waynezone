@@ -17,7 +17,7 @@ Publify::Application.configure do
   config.action_mailer.raise_delivery_errors = false
 
   config.active_support.deprecation = :log
-
+ 
   def log_to(stream)
     ActiveRecord::Base.logger = Logger.new(stream)
     ActiveRecord::Base.clear_active_connections!
