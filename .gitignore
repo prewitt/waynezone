@@ -34,3 +34,4 @@ bin/
 !/themes/typographic
 gems/
 Gemfile.lock
+.idea/

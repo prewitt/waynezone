@@ -1,4 +1,4 @@
-APP_PATH = "/root/waynezone"
+APP_PATH = "~/waynezone"
 working_directory APP_PATH
 stderr_path APP_PATH + "/log/unicorn.stderr.log"
 stdout_path APP_PATH + "/log/unicorn.stdout.log"
