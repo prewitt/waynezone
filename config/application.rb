@@ -34,6 +34,9 @@ module Publify
 
     # Time to step into asset pipeline…
     config.assets.enabled = true
+
+    config.active_record.default_timezone = :local
+    config.time_zone = 'Beijing'    
   end
 
   # Load included libraries.
