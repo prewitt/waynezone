@@ -35,7 +35,7 @@ class ResourceUploader < CarrierWave::Uploader::Base
     blog = Blog.default
     resize_setting = blog.send("image_#{size}_size").to_i
 
-#    resize_to_fit(resize_setting, resize_setting)
+    resize_to_fit(resize_setting, resize_setting)
   end
 
   def image?(new_file)
