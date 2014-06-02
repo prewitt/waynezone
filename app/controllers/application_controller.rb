@@ -16,6 +16,14 @@ class ApplicationController < ActionController::Base
     end
   end
 
+  def default_url_options
+    if Rails.env.production?
+        {:host => "waynezone.pw"}
+    else
+        {:host => "waynezone.pw"}
+    end
+  end 
+
   protected
 
   def set_paths

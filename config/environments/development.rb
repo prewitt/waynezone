@@ -18,6 +18,10 @@ Publify::Application.configure do
 
   config.active_support.deprecation = :log
  
+  config.after_initialize do
+	Rails.application.routes.default_url_options[:host]='waynezone.pw'
+  end 
+ 
   def log_to(stream)
     ActiveRecord::Base.logger = Logger.new(stream)
     ActiveRecord::Base.clear_active_connections!

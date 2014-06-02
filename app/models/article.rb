@@ -119,8 +119,9 @@ class Article < Content
 
   def permalink_url(anchor=nil, only_path=false)
     @cached_permalink_url ||= {}
+    only_path=true #waynepang add
     @cached_permalink_url["#{anchor}#{only_path}"] ||= blog.url_for(permalink_url_options, anchor: anchor, only_path: only_path)
-  end
+end
 
   def save_attachments!(files)
     files ||= {}

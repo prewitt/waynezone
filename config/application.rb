@@ -19,7 +19,7 @@ module Publify
     config.cache_store=:file_store, "#{::Rails.root.to_s}/public/cache/"
     
     config.plugins = [ :all ]
-
+    config.i18n.enforce_available_locales = false
     # Activate observers that should always be running
     config.active_record.observers = :email_notifier, :web_notifier
 
@@ -36,7 +36,9 @@ module Publify
     config.assets.enabled = true
 
     config.active_record.default_timezone = :local
-    config.time_zone = 'Beijing'    
+    config.time_zone = 'Beijing'  
+
+    Time.zone=config.time_zone  
   end
 
   # Load included libraries.
@@ -69,16 +71,16 @@ module Publify
   Date::DATE_FORMATS.merge!(
     :long_weekday => '%a %B %e, %Y %H:%M'
   )
-
   # TimeZone
-  if  File.file? "#{::Rails.root.to_s}/config/timezone.yml"
-    Time.zone = YAML.load(File.read("#{::Rails.root.to_s}/config/timezone.yml"))
-  end
+#  if  File.file? "#{::Rails.root.to_s}/config/timezone.yml"
+ #   Time.zone = YAML.load(File.read("#{::Rails.root.to_s}/config/timezone.yml"))
+  #end
 
   ActionMailer::Base.default :charset => 'utf-8'
 
-  if ::Rails.env != 'test'
+  if ::Rails.env != 'production'
     begin
+puts 'i am here mail test'
       mail_settings = YAML.load(File.read("#{::Rails.root.to_s}/config/mail.yml"))
 
       ActionMailer::Base.delivery_method = mail_settings['method']

@@ -2,6 +2,7 @@ config/database.yml
 config/mail.yml
 #config/timezone.yml
 config/secret.token
+config/environments/production.rb
 *.log
 *~
 db/db*
