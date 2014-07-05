@@ -49,7 +49,6 @@ PHP (&#42;), Python (&#42;), RHTML, Ruby, Scheme, SQL (&#42;), XHTML, XML, YAML.
         end
 
         text = text.to_s.gsub(/\r/,'').gsub(/\A\n/,'').chomp
-
         begin
           text = CodeRay.scan(text, lang.downcase.to_sym).span(options)
         rescue
@@ -62,7 +61,6 @@ PHP (&#42;), Python (&#42;), RHTML, Ruby, Scheme, SQL (&#42;), XHTML, XML, YAML.
         else
           titlecode=''
         end
-
         "<div class=\"CodeRay\"><pre>#{titlecode}#{text}</pre></div>"
       end
     end

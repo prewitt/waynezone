@@ -35,7 +35,7 @@ else
       raise "Don't know what gem to use for adapter #{adapter}"
   end
 end
-
+gem 'rmagick'
 gem "unicorn"
 gem "pg"
 gem "thin" # Change this to another web server if you want (ie. unicorn, passenger, puma...)

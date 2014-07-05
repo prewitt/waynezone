@@ -93,15 +93,12 @@ class TextFilterPlugin::Macro < TextFilterPlugin
     filterparams = params[:filterparams]
     regex1 = /<publify:#{short_name}(?:[ \t][^>]*)?\/>/
     regex2 = /<publify:#{short_name}([ \t][^>]*)?>(.*?)<\/publify:#{short_name}>/m
-
     new_text = text.gsub(regex1) do |match|
       macrofilter(blog,content,attributes_parse(match),params)
     end
-
     new_text = new_text.gsub(regex2) do |match|
       macrofilter(blog,content,attributes_parse($1.to_s),params,$2.to_s)
     end
-
     new_text
   end
 end
@@ -123,10 +120,9 @@ class PublifyApp
 
       def self.filtertext(blog,content,text,params)
         filterparams = params[:filterparams]
-
         macros = TextFilter.available_filter_types['macropost']
         macros.inject(text) do |text,macro|
-          macro.filtertext(blog,content,text,params)
+           macro.filtertext(blog,content,text,params)
         end
       end
     end
@@ -137,7 +133,6 @@ class PublifyApp
 
       def self.filtertext(blog,content,text,params)
         filterparams = params[:filterparams]
-
         macros = TextFilter.available_filter_types['macropre']
         macros.inject(text) do |text,macro|
           macro.filtertext(blog,content,text,params)
@@ -146,3 +141,4 @@ class PublifyApp
     end
   end
 end
+

@@ -12,7 +12,6 @@ class ArticlesController < ContentController
 
   def index
     conditions = (Blog.default.statuses_in_timeline) ? ["type in (?, ?)", "Article", "Note"] : ["type = ?", "Article"]
-
     limit = this_blog.per_page(params[:format])
     unless params[:year].blank?
       @articles = Content.published_at(params.values_at(:year, :month, :day)).where(conditions).page(params[:page]).per(limit)
@@ -85,10 +84,8 @@ class ArticlesController < ContentController
   def redirect
     from = extract_feed_format(params[:from])
     factory = Article::Factory.new(this_blog, current_user)
-
     @article = factory.match_permalink_format(from, this_blog.permalink_format)
     return show_article if @article
-
     # Redirect old version with /:year/:month/:day/:title to new format,
     # because it's changed
     ["%year%/%month%/%day%/%title%", "articles/%year%/%month%/%day%/%title%"].each do |part|
@@ -162,7 +159,6 @@ class ArticlesController < ContentController
     @description = this_blog.article_desc_template.to_title(@article, this_blog, params)
     groupings = @article.tags
     @keywords = groupings.map { |g| g.name }.join(", ")
-
     auto_discovery_feed
     respond_to do |format|
       format.html { render "articles/#{@article.post_type}" }

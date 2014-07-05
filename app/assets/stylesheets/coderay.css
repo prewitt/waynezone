@@ -2,6 +2,7 @@
   background-color: hsl(0,0%,95%);
   border: 1px solid silver;
   color: black;
+  line-height: 18px;
 }
 .CodeRay pre {
   margin: 0px;

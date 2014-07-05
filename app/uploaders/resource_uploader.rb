@@ -1,5 +1,4 @@
 class ResourceUploader < CarrierWave::Uploader::Base
-
   # To handle Base64 uploads...
   class FilelessIO < StringIO
     attr_accessor :original_filename
@@ -34,8 +33,7 @@ class ResourceUploader < CarrierWave::Uploader::Base
   def dynamic_resize_to_fit(size)
     blog = Blog.default
     resize_setting = blog.send("image_#{size}_size").to_i
-
-    resize_to_fit(resize_setting, resize_setting)
+   resize_to_fit(resize_setting,resize_setting)
   end
 
   def image?(new_file)
